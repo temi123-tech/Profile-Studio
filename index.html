@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Profile App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero" aria-labelledby="pageTitle">
+      <div>
+        <p class="eyebrow">Project 4 Final</p>
+        <h1 id="pageTitle">Personal Profile App</h1>
+        <p class="hero-copy">
+         Add, edit, search, and view personal profiles using JavaScript and API data.
+        </p>
+      </div>
+      <div class="hero-panel" aria-label="Profile summary">
+        <span class="summary-number" id="profileCount">0</span>
+        <span class="summary-label">profiles active</span>
+      </div>
+    </section>
+    <section class="toolbar" aria-label="Profile tools">
+      <label class="search-box" for="searchInput">
+        <span>Search</span>
+        <input id="searchInput" type="search" placeholder="Name, hobby, color..." autocomplete="off" />
+      </label>
+      <button id="loadSampleProfiles" type="button" class="secondary-button">
+       Load Sample Profiles
+      </button>
+    </section>
+
+    <p id="statusMessage" class="status-message" role="status" aria-live="polite"></p>
+
+    <section class="layout-grid">
+      <form id="profileForm" class="profile-form">
+        <div>
+          <p class="eyebrow">Profile Builder</p>
+          <h2 id="formTitle">Add a New Profile</h2>
+        </div>
+
+        <input type="hidden" id="profileId" />
+
+        <label for="name">
+          Name
+          <input type="text" id="name" required maxlength="40" placeholder="Temi" />
+        </label>
+
+        <label for="age">
+          Age
+          <input type="number" id="age" required min="1" max="120" placeholder="18" />
+        </label>
+
+        <label for="hobby">
+          Hobby
+          <input type="text" id="hobby" required maxlength="50" placeholder="Soccer" />
+        </label>
+
+        <label for="favoriteColor">
+          Favorite Color
+          <input type="text" id="favoriteColor" required maxlength="30" placeholder="Blue" />
+        </label>
+
+        <div class="form-actions">
+          <button id="submitButton" type="submit">Add Profile</button>
+          <button id="cancelEditButton" type="button" class="ghost-button hidden">Cancel</button>
+        </div>
+      </form>
+
+      <section class="profiles-section" aria-labelledby="profilesTitle">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Directory</p>
+            <h2 id="profilesTitle">Profile List</h2>
+          </div>
+          <span id="filteredCount" class="pill">0 shown</span>
+        </div>
+        <div id="profileContainer" class="profile-grid"></div>
+      </section>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
